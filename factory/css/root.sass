@@ -1,0 +1,66 @@
+html:root
+  --radius-inf: 9999px
+  --radius-small: 16px
+  --fixed-text: #000000
+  --hovered: color-mix(in srgb, var(--surface1), var(--surface2))
+  --important: color-mix(in srgb, var(--surface1) 80%, var(--surface2) 20%)
+
+  --trans: all ease-out 0.25s
+
+  --logout-bg: #FF505040
+  --logout-ft: #ff0b0b
+  --logout-fl: invert(17%) sepia(98%) saturate(5103%) hue-rotate(354deg) brightness(102%) contrast(110%)
+
+*
+  margin: 0
+
+html
+  height: 100%
+
+body
+  background: var(--background)
+  color: var(--text)
+  font-family: sans-serif
+  font-size: 0.9em
+  line-height: 1.5
+  margin: 0
+  padding: 0
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+a
+  text-decoration: none
+  color: inherit
+
+@keyframes BlahajMessageFadeOut
+  0%
+    opacity: 1
+    z-index: 99
+
+  90%
+    opacity: 1
+    z-index: 99
+
+  99%
+    opacity: 0
+    z-index: 99
+
+  100%
+    opacity: 0
+    z-index: -5
+
+
+.danger
+  background: #ff8b7f !important
+
+.warning
+  background: #ffba7e !important
+
+.success
+  background: #82ffb4 !important
+
+.info
+  background: #76c9ff !important

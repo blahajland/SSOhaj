@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+    include components/header
+    body
+        .BlahajFrame
+            .BlahajTopButtons
+                a.BlahajButton(href='edit.html')
+                    img(alt='Edit', src='https://blahaj.land/static/api?type=image&bucket=icons&file=join')
+                    p Edit
+                a#switch-theme.BlahajButton
+                    img(alt='Theme', src='https://blahaj.land/static/api?type=image&bucket=icons&file=theme')
+                    p Theme
+                a#ynh-logout.BlahajButton.BlahajLogout(href='?action=logout')
+                    img(alt='Log out', src='https://blahaj.land/static/api?type=image&bucket=icons&file=logout')
+                    p Log out
+            .BlahajUser
+                img(alt='Blahaj', src='https://blahaj.land/static/api?type=image&bucket=pictures&file=theme_user-icon')
+                div
+                    h2 Hello there, {{givenName}} :3
+                    p {{{uid}}} &bull; {{mail}}
+            #apps.BlahajAppList.listing-apps
+                | {{#app}}
+                a.BlahajAppTile(data-appname='{{name}}', href='https://{{url}}', rel='noopener noreferrer', target='_blank')
+                    img.BlahajAppIcon(alt='{{name}}', src='https://blahaj.land/static/api?type=image&bucket=apps&file=unknown')
+                    p.BlahajName {{name}}
+                | {{/app}}
+            include components/footer

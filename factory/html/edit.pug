@@ -1,0 +1,64 @@
+doctype html
+html(lang='en')
+    include components/header
+    body
+        .BlahajFrame
+            .BlahajTopButtons
+                a.BlahajButton(href='portal.html')
+                    img(alt='Back', src='https://blahaj.land/static/api?type=image&bucket=icons&file=left')
+                    p Cancel
+                a#switch-theme.BlahajButton
+                    img(alt='Theme', src='https://blahaj.land/static/api?type=image&bucket=icons&file=theme')
+                    p Theme
+                a#ynh-logout.BlahajButton.BlahajLogout(href='?action=logout')
+                    img(alt='Log out', src='https://blahaj.land/static/api?type=image&bucket=icons&file=logout')
+                    p Log out
+            .BlahajUser
+                img(alt='Blahaj', src='https://blahaj.land/static/api?type=image&bucket=pictures&file=theme_user-icon')
+                div
+                    h2 Edit {{givenName}}&apos;s profile
+            .BlahajEdit
+                form(action='edit.html', method='POST', role='form')
+                    .BlahajEdits
+                        div
+                            p Username
+                            label.BlahajInput.BlahajDisabled(for='uid')
+                                input#uid(disabled='', name='uid', required='', type='text', value='{{uid}}')
+                        div
+                            p Full name
+                            .BlahajDoubleEntries
+                                label.BlahajInput(for='givenName')
+                                    input#givenName(name='givenName', placeholder='First name', required='', type='text', value='{{givenName}}')
+                                label.BlahajInput(for='sn')
+                                    input#sn(name='sn', placeholder='Last name', required='', type='text', value='{{sn}}')
+                        div
+                            p  E-mail addresses
+                            label.BlahajInput(for='currentMail')
+                                input#currentMail(name='mail', placeholder='...@...', required='', type='email', value='{{mail}}')
+                            |                 {{#mailalias}}
+                            label.BlahajInput(for='mailAlias')
+                                input#mailAlias(name='mailalias[]', placeholder='...@...', type='email', value='{{.}}')
+                            |                 {{/mailalias}}
+                            label.BlahajInput.mailalias-input(for='mailaliasInput')
+                                input#mailaliasInput(name='mailalias[]', placeholder='...@...', type='email')
+                            a#add-mailalias.BlahajButton.BlahajButtonOption
+                                img(alt='Create', src='https://blahaj.land/static/api?type=image&bucket=icons&file=join')
+                                p Add mail alias
+                        div
+                            p E-mail forwarding addresses
+                            |                 {{#maildrop}}
+                            label.BlahajInput(for='mailDrop')
+                                input#mailDrop(name='maildrop[]', placeholder='...@...', type='email', value='{{.}}')
+                            |                 {{/maildrop}}
+                            label.BlahajInput.maildrop-input(for='mailForward')
+                                input#mailForward(name='maildrop[]', placeholder='...@...', type='email')
+                            a#add-maildrop.BlahajButton.BlahajButtonOption
+                                img(alt='Create', src='https://blahaj.land/static/api?type=image&bucket=icons&file=join')
+                                p Add forwarding address
+                    .BlahajButtonsSet
+                        a.BlahajSubmit(href='portal.html', role='button')
+                            p Cancel
+                        a.BlahajSubmit(href='password.html', role='button')
+                            p Change password
+                        input.BlahajSubmit.important(type='submit', value='Done')
+            include components/footer

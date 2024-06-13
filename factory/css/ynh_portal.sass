@@ -1,0 +1,367 @@
+@import "root"
+@import "mobile"
+@import "https://blahaj.land/static/api?type=css&file=colors"
+
+.BlahajFrame
+  display: flex
+  flex-direction: column
+  justify-content: start
+  align-items: stretch
+  gap: 64px
+  padding: 32px
+
+.BlahajTopButtons
+  position: absolute
+  top: 32px
+  right: 32px
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: end
+  align-items: end
+  gap: 12px
+
+.BlahajButton
+  padding: 10px 20px
+  border-radius: var(--radius-inf)
+  background: var(--surface1)
+  display: flex
+  align-items: center
+  justify-content: center
+  cursor: pointer
+  transition: var(--trans)
+  color: var(--text)
+  gap: 10px
+  border: none
+  flex: 0 0
+  font-weight: bold
+
+  > img
+    height: 20px
+    width: 20px
+    filter: var(--filter)
+
+  > p
+    font-weight: bold
+    white-space: nowrap
+
+  &:hover
+    background: var(--hovered)
+
+  &:active
+    background: var(--surface2)
+
+.BlahajLogout
+  background: var(--logout-bg)
+  color: var(--logout-ft)
+
+  > img
+    filter: var(--logout-fl)
+
+.BlahajUser
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  gap: 8px
+  margin-top: 96px
+
+  > img
+    height: 96px
+    width: 96px
+    border-radius: var(--radius-inf)
+
+  > div
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 0
+
+    > h2
+      font-weight: bold
+      font-size: 1.75em
+
+    > p
+      font-size: 1.125em
+      opacity: 0.66
+
+.BlahajAppList
+  padding: 0 5%
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: start
+  align-items: start
+  gap: 16px
+
+.BlahajAppTile
+  box-sizing: border-box
+  flex: 0 0 172px
+  aspect-ratio: 1/1
+  padding: 16px
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  gap: 12px
+  background: var(--surface1)
+  border-radius: var(--radius-small)
+  transition: var(--trans)
+
+  > img
+    height: 48px
+    width: 48px
+
+  > p
+    font-size: 1.125em
+    font-weight: bold
+    max-width: 100%
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+
+  &:hover, &:focus
+    background: color-mix(in srgb, var(--surface2), var(--background)) !important
+    transform: translateY(-10px)
+    scale: 1.05
+
+    > p
+      color: var(--text) !important
+
+  &:active
+    background: var(--surface2)
+
+.BlahajFooter
+  margin-top: 64px
+  padding: 0 32px
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: baseline
+  flex-wrap: wrap
+  gap: 32px
+
+  > a > img
+    height: 28px
+    opacity: 0.75
+    filter: var(--filter)
+
+  > div
+    display: flex
+    flex-direction: row
+    justify-content: start
+    align-items: center
+    flex-wrap: wrap
+    gap: 12px
+
+  &:not(.NotOnBottom)
+    position: absolute
+    bottom: 32px
+    left: 32px
+    right: 32px
+
+
+.BlahajFooterButton
+  padding: 8px 16px
+  font-size: 0.9em
+  border-radius: var(--radius-inf)
+  background: var(--surface1)
+  display: flex
+  align-items: center
+  justify-content: center
+  cursor: pointer
+  transition: var(--trans)
+  color: var(--text)
+  gap: 12px
+  flex: 0 0
+
+  > p
+    font-weight: bold
+    white-space: nowrap
+
+  > img
+    height: 16px
+    width: 16px
+    filter: var(--filter)
+
+  &:hover
+    background: var(--hovered)
+
+  &:active
+    background: var(--surface2)
+
+.BlahajMessage
+  box-sizing: border-box
+  position: fixed
+  bottom: 32px
+  right: 32px
+  padding: 16px 24px
+  min-width: 256px
+  display: flex
+  flex-direction: column
+  justify-content: stretch
+  align-items: stretch
+  gap: 4px
+  opacity: 0
+  z-index: -5
+  border-radius: var(--radius-small)
+  animation: BlahajMessageFadeOut ease-out 5s
+  color: var(--fixed-text)
+  background: var(--surface1)
+
+.BlahajLogin
+  width: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  gap: 56px
+
+  > form
+    display: flex
+    flex-direction: column
+    justify-content: stretch
+    align-items: stretch
+    gap: 12px
+
+  > img
+    margin-top: 32px
+    height: 128px
+
+.BlahajInput
+  background: var(--surface1)
+  padding: 0 16px
+  display: flex
+  flex-direction: row
+  justify-content: stretch
+  align-items: center
+  border-radius: var(--radius-small)
+  transition: var(--trans)
+  gap: 16px
+  min-width: 0
+
+  > a
+    height: 20px
+    width: 20px
+
+    > img
+      height: 100%
+      filter: var(--filter)
+
+  > img
+    height: 16px
+    filter: var(--filter)
+
+  > input
+    padding: 16px 0
+    background: none
+    border: none
+    flex-grow: 1
+    height: 100%
+    outline: none !important
+    width: 200px
+    color: var(--text)
+    min-width: 0
+
+    &::placeholder
+      color: var(--text)
+      opacity: 0.75
+
+  &:hover
+    background: var(--hovered)
+
+  &:active
+    background: var(--surface2)
+
+.BlahajDisabled
+  opacity: 0.75
+
+.BlahajSubmit
+  margin-top: 16px
+  padding: 16px 24px
+  background: var(--surface1)
+  border-radius: var(--radius-inf)
+  border: none
+  align-self: center
+  font-weight: bold
+  transition: var(--trans)
+  color: var(--text)
+  cursor: pointer
+
+  &.important
+    background: var(--important)
+
+  &:hover
+    background: var(--hovered)
+
+  &:active
+    background: var(--surface2)
+
+.BlahajEdit
+  width: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  gap: 56px
+
+  > form
+    display: flex
+    flex-direction: column
+    justify-content: stretch
+    align-items: stretch
+    gap: 64px
+
+.BlahajDoubleEntries
+  display: flex
+  flex-direction: row
+  justify-content: stretch
+  align-items: stretch
+  gap: 8px
+
+  > *
+    flex: 1 1
+
+.BlahajEdits
+  display: flex
+  flex-direction: column
+  justify-content: stretch
+  align-items: center
+  gap: 32px
+
+  > div
+    display: flex
+    flex-direction: column
+    justify-content: stretch
+    align-items: stretch
+    gap: 8px
+    width: 400px
+
+    > p
+      font-weight: bold
+
+.BlahajButtonsSet
+  display: flex
+  flex-direction: row
+  justify-content: center
+  flex-wrap: wrap
+  align-items: center
+  gap: 12px
+
+.BlahajButtonOption
+  align-self: center
+  margin: 8px 0 0
+
+.BlahajNotice
+  width: 400px
+  box-sizing: border-box
+  padding: 16px 24px
+  border-radius: var(--radius-small)
+  align-self: center
+  color: var(--fixed-text)
+  display: flex
+  flex-direction: column
+  justify-content: stretch
+  align-items: stretch
+  gap: 4px

@@ -1,0 +1,39 @@
+nav.BlahajFooter(class='{{#connected}}NotOnBottom{{/connected}}')
+    div
+        a.BlahajFooterButton(href='https://opencollective.com/blahajland/', target='_blank', rel='noopener noreferrer')
+            img(src='https://blahaj.land/static/api?type=image&bucket=icons&file=donate', alt='Donate')
+            p Donate
+        a.BlahajFooterButton(href='https://status.blahaj.land/', target='_blank', rel='noopener noreferrer')
+            img(src='https://blahaj.land/static/api?type=image&bucket=icons&file=cloud', alt='Cloud')
+            p Status
+        a.BlahajFooterButton(href='https://discord.gg/23ScBhN7xx', target='_blank', rel='noopener noreferrer')
+            img(src='https://blahaj.land/static/api?type=image&bucket=icons&file=help', alt='Help')
+            p  Support
+        | {{#connected}}
+        a.BlahajFooterButton(href='/yunohost/admin/', target='_blank', rel='noopener noreferrer')
+            img(src='https://blahaj.land/static/api?type=image&bucket=icons&file=open', alt='Admin')
+            p  Admin portal
+        | {{/connected}}
+        | {{#connected}}
+    a(href='https://blahaj.land')
+        img(src='https://blahaj.land/static/api/?type=image&bucket=pictures&file=text-logo', alt='Logo')
+        | {{/connected}}
+script(src="assets/js/ynh_portal.js")
+
+| {{#flash_win}}
+.BlahajMessage.success
+    h3 Good news :3
+    p {{.}}
+| {{/flash_win}}
+
+| {{#flash_fail}}
+.BlahajMessage.danger
+    h3 Uhhhhh...
+    p {{.}}
+| {{/flash_fail}}
+
+| {{#flash_info}}
+.BlahajMessage.info
+    h3 Info ;3
+    p {{.}}
+| {{/flash_info}}

@@ -1,0 +1,29 @@
+{
+  "name": "ssohaj-factory",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Template factory for SSOhaj",
+  "scripts": {
+    "compile": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balahajland/SSOhaj.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/balahajland/SSOhaj/issues"
+  },
+  "homepage": "https://github.com/balahajland/SSOhaj#readme",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-format-html": "^2.3.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0"
+  },
+  "dependencies": {
+    "sass": "^1.77.5"
+  }
+}
