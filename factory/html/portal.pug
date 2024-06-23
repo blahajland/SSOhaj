@@ -5,23 +5,23 @@ html(lang='en')
         .BlahajFrame
             .BlahajTopButtons
                 a.BlahajButton(href='edit.html')
-                    img(alt='Edit', src='https://blahaj.land/static/api?type=image&bucket=icons&file=join')
-                    p Edit
+                    img(alt='Settings', src='https://assets.blahaj.land/icons/user.png')
+                    p Accounts settings
                 a#switch-theme.BlahajButton
-                    img(alt='Theme', src='https://blahaj.land/static/api?type=image&bucket=icons&file=theme')
+                    img(alt='Theme', src='https://assets.blahaj.land/icons/theme.png')
                     p Theme
                 a#ynh-logout.BlahajButton.BlahajLogout(href='?action=logout')
-                    img(alt='Log out', src='https://blahaj.land/static/api?type=image&bucket=icons&file=logout')
+                    img(alt='Log out', src='https://assets.blahaj.land/icons/logout.png')
                     p Log out
             .BlahajUser
-                img(alt='Blahaj', src='https://blahaj.land/static/api?type=image&bucket=pictures&file=theme_user-icon')
+                img(alt='Blahaj', src='https://assets.blahaj.land/pictures/user-icon.png')
                 div
                     h2 Hello there, {{givenName}} :3
                     p {{{uid}}} &bull; {{mail}}
             #apps.BlahajAppList.listing-apps
                 | {{#app}}
                 a.BlahajAppTile(data-appname='{{name}}', href='https://{{url}}', rel='noopener noreferrer', target='_blank')
-                    img.BlahajAppIcon(alt='{{name}}', src='https://blahaj.land/static/api?type=image&bucket=apps&file=unknown')
+                    img.BlahajAppIcon(alt='{{name}}', src='https://assets.blahaj.land/apps/unknown.png')
                     p.BlahajName {{name}}
                 | {{/app}}
             include components/footer

@@ -5,16 +5,16 @@ html(lang='en')
         .BlahajFrame
             .BlahajTopButtons
                 a.BlahajButton(href='portal.html')
-                    img(alt='Back', src='https://blahaj.land/static/api?type=image&bucket=icons&file=left')
+                    img(alt='Back', src='https://assets.blahaj.land/icons/left.png')
                     p Cancel
                 a#switch-theme.BlahajButton
-                    img(alt='Theme', src='https://blahaj.land/static/api?type=image&bucket=icons&file=theme')
+                    img(alt='Theme', src='https://assets.blahaj.land/icons/theme.png')
                     p Theme
                 a#ynh-logout.BlahajButton.BlahajLogout(href='?action=logout')
-                    img(alt='Log out', src='https://blahaj.land/static/api?type=image&bucket=icons&file=logout')
+                    img(alt='Log out', src='https://assets.blahaj.land/icons/logout.png')
                     p Log out
             .BlahajUser
-                img(alt='Blahaj', src='https://blahaj.land/static/api?type=image&bucket=pictures&file=theme_user-icon')
+                img(alt='Blahaj', src='https://assets.blahaj.land/pictures/user-icon.png')
                 div
                     h2 Edit {{givenName}}&apos;s profile
             .BlahajEdit
@@ -42,7 +42,7 @@ html(lang='en')
                             label.BlahajInput.mailalias-input(for='mailaliasInput')
                                 input#mailaliasInput(name='mailalias[]', placeholder='...@...', type='email')
                             a#add-mailalias.BlahajButton.BlahajButtonOption
-                                img(alt='Create', src='https://blahaj.land/static/api?type=image&bucket=icons&file=join')
+                                img(alt='Create', src='https://assets.blahaj.land/icons/join.png')
                                 p Add mail alias
                         div
                             p E-mail forwarding addresses
@@ -53,7 +53,7 @@ html(lang='en')
                             label.BlahajInput.maildrop-input(for='mailForward')
                                 input#mailForward(name='maildrop[]', placeholder='...@...', type='email')
                             a#add-maildrop.BlahajButton.BlahajButtonOption
-                                img(alt='Create', src='https://blahaj.land/static/api?type=image&bucket=icons&file=join')
+                                img(alt='Create', src='https://assets.blahaj.land/icons/join.png')
                                 p Add forwarding address
                     .BlahajButtonsSet
                         a.BlahajSubmit(href='portal.html', role='button')

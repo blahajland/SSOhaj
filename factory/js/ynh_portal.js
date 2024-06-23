@@ -2,7 +2,9 @@
 
 const THEME_COOKIE_NAME = "blahaj_portal_theme"
 
-const APPS_URL = "https://blahaj.land/static/api/?type=json&file=apps"
+const ASSETS_URL = "https://assets.blahaj.land"
+
+const APPS_URL = `${ASSETS_URL}/json/apps.json`
 
 // === TOOLS ===
 
@@ -21,18 +23,17 @@ const switchTheme = () => {
 }
 
 const Theme = {
-    setThemeFromCookie: () => setThemeFromCookie(),
-    switchTheme: () => switchTheme()
+    setThemeFromCookie: () => setThemeFromCookie(), switchTheme: () => switchTheme()
 }
 
 const fetchApps = async () => {
     let request = await fetch(APPS_URL)
-    if (request.ok)
-        return null
+    if (!request.ok) return null
     let data = await request.json()
-    if (!('apps' in data))
-        return null
-    return new Map(Object.entries(data.apps))
+    if (!('apps' in data)) return null
+    let map = new Map()
+    data.apps.forEach((e) => map.set(e.yuno, e))
+    return map
 }
 
 const Cookies = {
@@ -47,8 +48,7 @@ const Cookies = {
             .split(new RegExp('; ?'))
         for (let cookie of cookies) {
             let pair = cookie.split("=")
-            if (pair[0].trim() === key.trim())
-                return pair[1]
+            if (pair[0].trim() === key.trim()) return pair[1]
         }
         return null
     }
@@ -58,10 +58,8 @@ const Cookies = {
  https://github.com/Darklg/JavaScriptUtilities/blob/master/assets/js/vanilla-js/libs/vanilla-events.js
  */
 window.addEvent = (el, eventName, callback, options) => {
-    if (!el)
-        return
-    if (!options || typeof (options) !== "object")
-        options = {}
+    if (!el) return
+    if (!options || typeof (options) !== "object") options = {}
     options.capture = false
     el.addEventListener(eventName, callback, options)
 }
@@ -90,17 +88,16 @@ const initPortal = async () => {
     window.addEvent(document.getElementById('BlahajHide'), "click", () => {
         currentState = currentState === "hide" ? "show" : "hide"
         document.getElementById('password').type = currentState === "hide" ? "password" : "text"
-        document.getElementById('BlahajHide').querySelector('img').src = `https://blahaj.land/static/api/?type=image&bucket=icons&file=input_${currentState}-pwd`
+        document.getElementById('BlahajHide').querySelector('img').src = `${ASSETS_URL}/icons/${currentState}.png`
     })
 
     Theme.setThemeFromCookie()
 
     let themeSwitch = document.getElementById('switch-theme')
-    if (themeSwitch)
-        themeSwitch.onclick = () => Theme.switchTheme()
+    if (themeSwitch) themeSwitch.onclick = () => Theme.switchTheme()
 
     let appInfos = await fetchApps()
-    if(appInfos){
+    if (appInfos) {
         Array.from(document.getElementsByClassName("BlahajAppTile")).forEach((el) => {
             let appInfo = appInfos.get(el.getAttribute('data-appname'))
             if (appInfo) {

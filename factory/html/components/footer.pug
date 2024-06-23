@@ -1,22 +1,22 @@
 nav.BlahajFooter(class='{{#connected}}NotOnBottom{{/connected}}')
     div
         a.BlahajFooterButton(href='https://opencollective.com/blahajland/', target='_blank', rel='noopener noreferrer')
-            img(src='https://blahaj.land/static/api?type=image&bucket=icons&file=donate', alt='Donate')
+            img(src='https://assets.blahaj.land/icons/donate.png', alt='Donate')
             p Donate
         a.BlahajFooterButton(href='https://status.blahaj.land/', target='_blank', rel='noopener noreferrer')
-            img(src='https://blahaj.land/static/api?type=image&bucket=icons&file=cloud', alt='Cloud')
+            img(src='https://assets.blahaj.land/icons/cloud.png', alt='Cloud')
             p Status
         a.BlahajFooterButton(href='https://discord.gg/23ScBhN7xx', target='_blank', rel='noopener noreferrer')
-            img(src='https://blahaj.land/static/api?type=image&bucket=icons&file=help', alt='Help')
+            img(src='https://assets.blahaj.land/icons/help.png', alt='Help')
             p  Support
         | {{#connected}}
         a.BlahajFooterButton(href='/yunohost/admin/', target='_blank', rel='noopener noreferrer')
-            img(src='https://blahaj.land/static/api?type=image&bucket=icons&file=open', alt='Admin')
+            img(src='https://assets.blahaj.land/icons/open.png', alt='Admin')
             p  Admin portal
         | {{/connected}}
         | {{#connected}}
     a(href='https://blahaj.land')
-        img(src='https://blahaj.land/static/api/?type=image&bucket=pictures&file=text-logo', alt='Logo')
+        img(src='https://assets.blahaj.land/pictures/text-logo.png', alt='Logo')
         | {{/connected}}
 script(src="assets/js/ynh_portal.js")
 

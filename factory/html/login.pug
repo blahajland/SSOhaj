@@ -4,15 +4,15 @@ html(lang='en')
     body
         .BlahajFrame
             .BlahajLogin
-                img(alt='Logo', src='https://blahaj.land/static/api/?type=image&bucket=pictures&file=theme_logo')
+                img(alt='Logo', src='https://assets.blahaj.land/pictures/login-logo.png')
                 form.login-form(action='', method='post', name='input')
                     label.BlahajInput(for='user')
-                        img(alt='User', src='https://blahaj.land/static/api/?type=image&bucket=icons&file=user')
+                        img(alt='User', src='https://assets.blahaj.land/icons/user.png')
                         input#user(autocomplete='username', autofocus='', name='user', placeholder='Username', required='', type='text')
                     label.BlahajInput(for='password')
-                        img(alt='Password', src='https://blahaj.land/static/api/?type=image&bucket=icons&file=password')
+                        img(alt='Password', src='https://assets.blahaj.land/icons/password.png')
                         input#password(autocomplete='current-password', name='password', placeholder='Password', required='', type='password')
                         a#BlahajHide
-                            img(alt='Hide', src='https://blahaj.land/static/api/?type=image&bucket=icons&file=input_hide-pwd')
+                            img(alt='Hide', src='https://assets.blahaj.land/icons/hide.png')
                     input.BlahajSubmit.important(type='submit', value='Log in')
             include components/footer
